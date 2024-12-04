@@ -37,13 +37,38 @@ document.getElementById('consultaForm').addEventListener('submit', function(even
 });
 
 document.getElementById('cancelButton').addEventListener('click', function() {
-    alert('Consulta cancelada!');
-    // Redirecionando para a página principal
-    window.location.href = window.location.href;
+    // Exibe a seção de cancelamento
+    document.getElementById('cancelSection').style.display = 'block';
+
+    // Oculta o formulário e o resumo
+    document.getElementById('consultaForm').style.display = 'none';
+    document.getElementById('summaryContainer').style.display = 'none';
+});
+
+// Funcionalidade para o botão "Voltar" na seção de cancelamento
+document.getElementById('goBackButtonCancel').addEventListener('click', function() {
+    // Opcional: redirecionar para outra página ou restaurar o formulário
+    window.location.href = "consult.html"; // Ajuste conforme necessário
 });
 
 document.getElementById('confirmButton').addEventListener('click', function() {
-    alert('Consulta marcada!');
-    // Redirecionando para a página principal
-    window.location.href = window.location.href;
+    // Exibe a seção de confirmação
+    document.getElementById('confirmSection').style.display = 'block';  // Mudando para 'flex' para aplicar o layout flexbox
+
+    // Oculta o formulário e o resumo
+    document.getElementById('consultaForm').style.display = 'none';
+    document.getElementById('summaryContainer').style.display = 'none';
+   
+});
+
+
+// Voltar para o formulário
+document.getElementById('goBackButton').addEventListener('click', function() {
+    // Esconde a seção de confirmação
+    document.getElementById('confirmSection').style.display = 'none';
+    window.location.href = "consult.html"; 
+
+    // Exibe novamente o formulário e o resumo
+    document.getElementById('consultaForm').style.display = 'block';
+    document.getElementById('summaryContainer').style.display = 'none';  // O resumo pode estar oculto até o formulário ser enviado
 });
