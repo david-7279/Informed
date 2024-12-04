@@ -117,6 +117,7 @@ select, input[type="text"], input[type="datetime-local"], textarea {
     border: 1px solid #ccc;
     margin-top: 8px;
     transition: border 0.3s ease;
+    background: var(--color-background-secondary);
 }
 
 /* Foco nos campos */
