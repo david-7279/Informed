@@ -335,3 +335,27 @@ button.confirm-button:hover {
     flex-direction: row;
 }
 
+/* Inicialmente oculta a seção de confirmação */
+ .confirm-response {
+    display: flex;  /* Mantém a seção oculta inicialmente */
+    width: 1000px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 10%;
+
+
+}
+
+
+
+
+/* Inicialmente oculta a seção de confirmação */
+ .cancel-response {
+    display: flex;  /* Mantém a seção oculta inicialmente */
+    width: 1000px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 10%;
+
+
+}
