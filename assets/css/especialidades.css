@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global Variables */
+:root {
+    --color-primary: #c458f5;
+    --color-primary-opacity: #c66ef0;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark: #242424;
+    --color-background: #fff;
+    --color-border-line: #E2E6EA;
+    --color-button-backgroud: #fafefd;
+    --color-background-footer: var(--footer-gradiente);
+    --card-border-radius: 8px;
+    --color-light: rgba(132, 139, 200, 0.1);
+    --box-shadow: 0 0.5rem 1rem var(--color-light);
+    --line-box-shadow: 0 0.8rem 2rem var(--color-dark);
+    --box-shadow-hover: 0 0rem 1.5rem var(--color-light);
+
+    /* Gradiente Colors */
+    --color-text-black: #000;
+    --color-text-white: #fff;
+    --color-text-black-light: #666666;
+    --color-text-dark-light: #8F8F8F;
+    --color-text-dark-medium: #6D6D6D;
+    --text-gradient-dark: linear-gradient(-85deg, var(--color-text-black), var(--color-text-black-light));
+    --text-gradient-dark-light: linear-gradient(-90deg, var(--color-text-dark-light), var(--color-text-dark-medium));
+
+    --color-text-title-primary: #BF59ED;
+    --color-text-title-secondary: #BF59ED;
+    --title-gradiente: linear-gradient(0deg, var(--color-text-title-primary), var(--color-text-title-secondary));
+
+    --color-background-footer-primary: #F2F3FF;
+    --color-background-footer-secondary: #CCCDD7;
+    --footer-gradiente: linear-gradient(98deg, var(--color-background-footer-primary), var(--color-background-footer-secondary));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-black);
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-background);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    margin: 20px auto;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.specialties {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.specialties h2 {
+    font-size: 1.8rem;
+    background-color: #8e44ad;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.specialties ul {
+    list-style: none;
+    padding: 0;
+}
+
+.specialties ul li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
