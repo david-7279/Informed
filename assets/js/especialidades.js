@@ -12,3 +12,4 @@ document.querySelector('.back-btn').addEventListener('click', () => {
 document.querySelector('.view-doctors').addEventListener('click', () => {
     alert('Redirecionando para a lista de médicos...');
 });
+g
