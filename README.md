@@ -27,10 +27,7 @@ The **IPB Health Center** is a digital solution designed to improve the manageme
 ### 5. **Vaccination Scheduling**
    Users can schedule their vaccinations directly through the platform, with the ability to view the available vaccine schedule and select a time for the application.
 
-### 6. **Blood Donation**
-   The platform also provides information and the option to schedule blood donations, contributing to the health of the community.
-
-### 7. **Specific Specialty**
+### 6. **Specific Specialty**
    Through this feature, users can choose a specific medical specialty, such as cardiology, dermatology, pediatrics, among others, to schedule an appointment with the appropriate professional.
 
 ---
