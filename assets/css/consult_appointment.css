@@ -1,0 +1,337 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global Variables */
+:root{
+    --color-primary: #c458f5;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark: #242424;
+    --color-background: #fff;
+    --color-background-secondary: #f4f4f4;
+    --color-background-footer: var(--footer-gradiente);
+    --card-border-radius: 8px;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --box-shadow: 0 0.5rem 1rem var(--color-light);
+    --box-shadow-hover: 0 0rem 1.5rem var(--color-light);
+  
+    /* Gradiente Colors */
+    --color-text-black: #000;
+    --color-text-white: #fff;
+    --color-text-black-light: #666666;
+    --color-text-dark-light: #8F8F8F;
+    --color-text-dark-medium: #6D6D6D;
+    --text-gradient-dark: linear-gradient(-85deg, var(--color-text-black), var(--color-text-black-light));
+    --text-gradient-dark-light: linear-gradient(-90deg, var(--color-text-dark-light), var(--color-text-dark-medium));
+  
+    --color-text-title-primary: #BF59ED;
+    --color-text-title-secondary: #BF59ED;
+    --title-gradiente: linear-gradient(0deg, var(--color-text-title-primary), var(--color-text-title-secondary));
+  
+    --color-background-footer-primary: #F2F3FF;
+    --color-background-footer-secondary: #CCCDD7; 
+    --footer-gradiente: linear-gradient(98deg, var(--color-background-footer-primary), var(--color-background-footer-secondary));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-black);
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    background: var(--color-background);
+}
+
+sup {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha no topo */
+    text-align: center; /* Centraliza o texto dentro do elemento */
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 30px 20%; 
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--color-text-title-primary);
+    margin-bottom: 40px;
+    background: var(--title-gradiente);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+h5 {
+    font-weight: normal;
+}
+
+/* Container do formulário */
+.form-container {
+
+   width: 1200px;
+    margin: 0 auto;
+  
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Grupo de formulário */
+.form-group {
+    margin-bottom: 60px;
+}
+
+.form-group h5 {
+
+    margin-bottom: 15px;
+}
+/* Rótulos dos campos */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--color-dark);
+    display: block;
+}
+
+/* Estilos para os campos de entrada e seleção */
+select, input[type="text"], input[type="datetime-local"], textarea {
+    width: 600px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    transition: border 0.3s ease;
+}
+
+/* Foco nos campos */
+select:focus, input[type="text"]:focus, input[type="datetime-local"]:focus, textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Área de texto */
+textarea {
+    resize: vertical;
+    width: 1000px;
+    max-width: 1000px;
+    min-height: 300px;
+    max-height: 700px;
+}
+
+/* Botão de confirmação */
+.confirm {
+    width: 1000px;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 5px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirm:hover {
+
+    background-color: #9b4dcc;
+}
+
+/* Resumo da consulta */
+.summary{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.summary-container h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .name h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-text-black);
+    margin-bottom: 5px;
+}
+
+.content .name h4{
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-black);
+    margin-bottom: 5px;
+}
+
+.content .division{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+
+.content .field{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.content .field span{
+    display: flex;
+    align-items: center;
+    top: 20px;
+    width: 450px;
+    height: 50px;
+    border: 1px solid var(--color-border-line);
+    background: var(--color-background);
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding-inline-start: 10px;
+    
+}
+
+ .line{
+    width: 88%;
+    border: 1px solid var(--color-border-line);
+    box-shadow: var(--box-shadow);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.summary-item {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--color-text-dark-light);
+}
+
+.summary-item strong {
+    color: var(--color-text-title-primary);
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+    border: 0;
+    outline: 0;
+}
+
+.display .name{
+    display: flex;
+    flex-direction: column;
+}
+
+.display .name h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-text-black);
+    margin-bottom: 5px;
+}
+
+.display .name h4{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-dark-light);
+    margin-bottom: 20px;
+}
+
+.display .division{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.display .field p{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-black);
+    margin-bottom: 10px;
+}
+
+.display .field span{
+    max-width: 100%;
+    max-height: 100%;
+    top: 20px;
+    width: 450px;
+    height: 50px;
+    border: 1px solid var(--color-border-line);
+    background: var(--color-background);
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding-inline-start: 10px;
+}
+
+/* Botões no resumo */
+button.cancel-button, button.confirm-button {
+    width: 48%;
+    padding: 10px ;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.cancel-button {
+    background-color: #e74c3c;
+    margin-right: 4%;
+}
+
+button.cancel-button:hover {
+    background-color: #c0392b;
+}
+
+button.confirm-button {
+    background-color: #2ecc71;
+    margin-left: 4%;
+}
+
+button.confirm-button:hover {
+    background-color: #27ae60;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+}
+

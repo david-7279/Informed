@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
-  <link rel="stylesheet" href="../assets/css/consult.css">
+  <title>Consultas | Informed</title>
   <link rel="stylesheet" href="../assets/css/navbar_footer.css">
-  <title>Marcação de Consulta | Informed</title>
+  <link rel="stylesheet" href="../assets/css/consult.css">
 </head>
 
 <body>
@@ -73,7 +72,7 @@
         <i class="icon fa-solid fa-heart-pulse"></i>
         <p>Doar Sangue</p>
       </a>
-      <a href="./especialidade.html" class="item">
+      <a href="" class="item">
         <i class="icon fa-solid fa-stethoscope"></i>
         <p>Especialidades</p>
       </a>
@@ -91,201 +90,15 @@
       </a>
     </div>
   </aside>
-  
+
   <main>
-    <section class="form" id="consultaForm">
-      <div class="form-container">
-        <form>
-          <div class="form-group">
-            <label for="tipoConsulta">Tipo de Consulta</label>
-            <h5>Escolha o tipo de consulta que deseja agendar</h5>
-            <select id="tipoConsulta" required>
-              <option value="">Selecione...</option>
-              <option value="Marcação">Marcação</option>
-              <option value="Exame">Exame</option>
-            </select>
-            <div class="line"></div>
-          </div>
-
-
-
-          <div class="form-group">
-            <label for="especialidade">Especialidade Médica</label>
-            <h5>Escolha a sua especialidade medica</h5>
-            <select id="especialidade" required>
-              <option value="">Selecione...</option>
-              <option value="Cirurgia">Cirurgia</option>
-              <option value="Radioterapia">Radioterapia</option>
-              <option value="Cardiologia">Cardiologia</option>
-              <option value="Neurologia">Neurologia</option>
-              <option value="Dermatologia">Dermatologia</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="medico">Escolha o Médico</label>
-            <h5>Indique o nome do seu médico de referência.</h5>
-            <select id="medico" required>
-              <option value="">Selecione...</option>
-              <option value="Dr Carlos">Dr. Carlos Silva</option>
-              <option value="Dra Maria">Dra. Maria Souza</option>
-              <option value="Dr João">Dr. João Oliveira</option>
-              <option value="Dra Ana">Dra. Ana Costa</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="unidade">Unidade Universitária</label>
-            <h5>Escolha a sua unidade universitária.</h5>
-            <select id="unidade" required>
-              <option value="">Selecione...</option>
-              <option value="Clínica A">Clínica A</option>
-              <option value="Clínica B">Clínica B</option>
-              <option value="Clínica C">Clínica C</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="dataHora">Data e Hora da Consulta</label>
-            <h5>Escolha a data e o horário que melhor se adequa.</h5>
-            <input type="datetime-local" id="dataHora" required>
-          </div>
-          <div class="line"></div>
-
-          <div class="form-group">
-            <label for="motivo">Motivo da Consulta</label>
-            <h5>Descreva brevemente o motivo da consulta.</h5>
-            <textarea id="motivo" rows="4" required></textarea>
-          </div>
-
-          <button class="confirm" type="submit">Confirmar Agendamento</button>
-        </form>
-      </div>
-    </section>
-
-
-    <section class="summary" id="summaryContainer">
-      <div class="summary-container">
-        <h2>Resumo da Consulta</h2>
-
-        <div class="content">
-          <div class="name">
-            <h3>Tipo de consulta</h3>
-            <h4>O tipo de consulta que você escolheu foi</h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryTipoConsulta"></span>
-              </div>
-            </div>
-          </div>
-          <div class="line"></div>
-        </div>
-
-        <div class="content">
-          <div class="name">
-            <h3>Especialidade médica</h3>
-            <h4>A especialidade médica que você escolheu foi </h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryEspecialidade"></span>
-              </div>
-            </div>
-          </div>
-          <div class="line"></div>
-        </div>
-
-        <div class="content">
-          <div class="name">
-            <h3>Profissional de saúde</h3>
-            <h4>O médico que você escolheu foi </h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryMedico"></span>
-              </div>
-            </div>
-          </div>
-          <div class="line"></div>
-        </div>
-
-        <div class="content">
-          <div class="name">
-            <h3>Unidade universitária</h3>
-            <h4>A unidade universitária que você escolheu foi </h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryUnidade"></span>
-              </div>
-            </div>
-          </div>
-          <div class="line"></div>
-        </div>
-
-
-        <div class="content">
-          <div class="name">
-            <h3>Data e hora</h3>
-            <h4>A Data e hora que você escolheu foram </h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryData"></span>
-              </div>
-              <div class="field">
-                <span id="summaryHora"></span>
-              </div>
-            </div>
-          </div>
-          <div class="line"></div>
-        </div>
-
-        <div class="content">
-          <div class="name">
-            <h3>Motivo da consulta</h3>
-            <h4>O motivo da sua consulta foi</h4>
-            <div class="division">
-              <div class="field">
-                <span id="summaryMotivo"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="btn">
-          <button class="cancel-button" id="cancelButton">Cancelar</button>
-          <button class="confirm-button" id="confirmButton">Confirmar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção de confirmação -->
-    <section class="confirm-response" id="confirmSection" style="display: none;">
-      <div class="confirm-response">
-        <h2>Consulta Marcada</h2>
-        <p>A sua consulta foi agendada com sucesso.</p>
-        <p>Irá receber um email ou uma sms no seu telemovel com o relatório da sua consulta.</p>
-        <button id="goBackButton">Voltar</button>
-      </div>
-    </section>
-
-<!-- Seção de cancelar -->
-    <section class="cancel-response" id="cancelSection" style="display: none;">
-      <div class="cancel-response">
-        <h2>Consulta Cancelada</h2>
-        <p>A sua consulta foi cancelada.</p>
-        <button id="goBackButtonCancel">Voltar</button>
-      </div>
-    </section>
-
+    <h1>Consultas do Usuário</h1>
+    <div id="consultasContainer">
+      <!-- Consultas marcadas serão exibidas aqui -->
+    </div>
+    <button id="novaConsultaButton">Marcar Nova Consulta</button>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="upper">
       <div class="left">

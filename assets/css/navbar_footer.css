@@ -139,6 +139,13 @@ body .toggle-circle {
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     background: var(--color-background);
 }
@@ -288,7 +295,7 @@ header .account-link .account:hover {
 aside {
     position: fixed;
     align-items: center;
-    padding: 30px 3%;
+    padding: 120px 3%;
 }
 
 aside a {
