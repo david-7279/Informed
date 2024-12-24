@@ -81,7 +81,6 @@
 
     <!-- Conteudo Central -->
     <main>
-        <!-- Image --> 
         <div class="profile-picture">
             <div class="image">
                 <img src="../assets/images/profilePicture.jpg" alt="Profile Picture">
@@ -93,124 +92,92 @@
         <div class="form">
             <div class="name">
                 <h3>Nome Completo</h3>
-                <h4></h4>
                 <div class="division">
                     <div class="field">
                         <p>Primeiro Nome</p>
-                        <form>
-                            <input type="text" placeholder="Info" required>
-                        </form>
+                        <input type="text" id="firstName" placeholder="Info" required>
                     </div>
                     <div class="field">
                         <p>Sobrenome</p>
-                        <form>
-                            <input type="text" placeholder="Med" required>
-                        </form>
+                        <input type="text" id="lastName" placeholder="Med" required>
                     </div>
                 </div>
             </div>
-            <div class="line"></div>
         </div>
 
         <!-- Email -->
         <div class="form">
             <div class="name">
                 <h3>Email</h3>
-                <h4>Utilizaremos este email para lhe enviar notificações sobre consultas, resultados médicos e outras informações relevantes.</h4>
-                <div class="division">
-                    <div class="field">
-                        <form>
-                            <input type="email" placeholder="a0000@alunos.ipb.pt" required>
-                        </form>
-                    </div>
-                </div>
+                <h4>Utilizaremos este email para enviar notificações.</h4>
+                <input type="email" id="email" placeholder="a0000@alunos.ipb.pt" required>
             </div>
-            <div class="line"></div>
         </div>
 
         <!-- Phone -->
         <div class="form">
             <div class="name">
                 <h3>Telefone</h3>
-                <div class="division">
-                    <div class="field">
-                        <p>Número de Telefone</p>
-                        <form>
-                            <input type="tel" placeholder="+351 910 000 000" required>
-                        </form>
-                    </div>
-                </div>
+                <input type="tel" id="phone" placeholder="+351 910 000 000" required>
             </div>
-            <div class="line"></div>
         </div>
 
         <!-- Doctor -->
         <div class="form">
             <div class="name">
                 <h3>Médico</h3>
-                <div class="division">
-                    <div class="field">
-                        <p>Nome do Médico</p>
-                        <form>
-                            <input type="text" placeholder="Dr. João Silva" required>
-                        </form>
-                    </div>
-                </div>
+                <select id="doctor" required>
+                    <option value="">Selecione</option>
+                    <option value="Dr. João Silva">Dr. João Silva</option>
+                    <option value="Dr. Maria Santos">Dr. Maria Santos</option>
+                </select>
             </div>
-            <div class="line"></div>
         </div>
 
-        <!-- Blood -->
+        <!-- Blood Type -->
         <div class="form">
             <div class="name">
                 <h3>Tipo Sanguíneo</h3>
-                <div class="division">
-                    <div class="field">
-                        <p>Tipo</p>
-                        <form>
-                            <input type="text" placeholder="O+" required>
-                        </form>
-                    </div>
-                </div>
+                <select id="bloodType" required>
+                    <option value="">Selecione</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
             </div>
-            <div class="line"></div>
         </div>
 
         <!-- Allergies -->
         <div class="form">
             <div class="name">
                 <h3>Alergias</h3>
-                <div class="division">
-                    <div class="field">
-                        <p>Especificar</p>
-                        <form>
-                            <textarea placeholder="Informe suas alergias" required></textarea>
-                        </form>
-                    </div>
-                </div>
+                <label><input type="checkbox" name="allergies" value="Nenhuma"> Nenhuma</label>
+                <label><input type="checkbox" name="allergies" value="Pólen"> Pólen</label>
+                <label><input type="checkbox" name="allergies" value="Amendoim"> Amendoim</label>
             </div>
-            <div class="line"></div>
         </div>
 
-        <!-- Sickness -->
+        <!-- Chronic Diseases -->
         <div class="form">
             <div class="name">
-                <h3>Doenças</h3>
-                <div class="division">
-                    <div class="field">
-                        <p>Especificar</p>
-                        <form>
-                            <textarea placeholder="Informe suas doenças" required></textarea>
-                        </form>
-                    </div>
-                </div>
+                <h3>Doenças Crónicas</h3>
+                <label><input type="checkbox" name="diseases" value="Nenhuma"> Nenhuma</label>
+                <label><input type="checkbox" name="diseases" value="Diabetes"> Diabetes</label>
+                <label><input type="checkbox" name="diseases" value="Hipertensão"> Hipertensão</label>
             </div>
-            <div class="line"></div>
         </div>
 
+        <!-- Save Button -->
+        <div class="form">
+            <button id="saveButton" onclick="saveData()">Salvar Alterações</button>
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="upper">
             <div class="left">
@@ -252,5 +219,24 @@
             <p>Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <script>
+        function saveData() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const doctor = document.getElementById('doctor').value;
+            const bloodType = document.getElementById('bloodType').value;
+
+            if (!firstName || !lastName || !email || !phone || !doctor || !bloodType) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            alert('Alterações salvas com sucesso!');
+        }
+    </script>
 </body>
+
 </html>
