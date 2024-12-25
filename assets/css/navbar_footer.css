@@ -273,17 +273,29 @@ header {
     display: block;
 }
 
+header a{
+    text-decoration: none;
+}
+
 header .account-link .account {
+    display: flex;
+    align-items: center;
     padding: 15px 80px;
-    background: var(--color-button-backgroud);
+    background: var(--color-button-background);
     color: var(--color-text-black);
     box-shadow: var(--box-shadow);
     border-color: var(--color-primary);
     border-radius: 24px;
     font-size: 14px;
     font-weight: 400;
+    gap: 10px;
     cursor: pointer;
     transition: box-shadow 1s ease, padding 1s ease, margin-right 1s ease;
+}
+
+header .account-link .account i {
+    margin-right: 10px;
+    font-size: 16px;
 }
 
 header .account-link .account:hover {
