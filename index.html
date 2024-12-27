@@ -10,37 +10,24 @@
 </head>
 <body>
   <div class="container">
-    <div class="welcome-text">
-      Bem-vindo ao Informed
-    </div>
+    <div class="welcome-text">Bem-vindo ao Informed</div>
     <div class="description">
       Gerencie facilmente as suas consultas e aceda às informações de saúde com a nossa plataforma dedicada ao bem-estar
-      dos estudantes.
-      Com o Informed, a saúde está sempre ao seu alcance, de forma rápida, intuitiva e segura.
+      dos estudantes. Com o Informed, a saúde está sempre ao seu alcance, de forma rápida, intuitiva e segura.
     </div>
-    <div class="login-box">
-      <h2>
-        Login
-      </h2>
-      <p>
-        Coloque as suas credenciais para iniciar sessão
-      </p>
-      <input placeholder="Nº mecanográfico/ funcionário" type="text" />
-      <input placeholder="Senha" type="password" />
-      <div>
-        <input id="keep-logged-in" type="checkbox" />
-        <label for="keep-logged-in">
-          Manter a sessão iniciada
-        </label>
-      </div>
-      <a href="./pages/home.html">
-        <button>
-          Iniciar sessão
-        </button>
-      </a>
 
+    <div class="login-box">
+      <h2>Login</h2>
+      <p>Coloque as suas credenciais para iniciar sessão</p>
+      <input id="email" placeholder="Nº mecanográfico / funcionário" type="text" />
+      <input id="password" placeholder="Palavra-passe" type="password" />
+      <div class="session">
+        <label><input type="checkbox" name="Session" value="Session"> Manter a sessão iniciada</label>
+      </div>
+      <button onclick="validateForm()">Iniciar sessão</button>
     </div>
   </div>
 
+  <script src="/assets/js/index.js"></script>
 </body>
 </html>
