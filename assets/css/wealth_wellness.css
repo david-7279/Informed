@@ -50,6 +50,10 @@ main{
     padding: 60px 25%;
 }
 
+aside h2 {
+  text-transform: none;
+}
+
 h2{
   font-size: 14px;
   font-weight: 400;
