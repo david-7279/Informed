@@ -18,45 +18,46 @@
     <header>
         <!-- Logo -->
         <a href="./home.html" class="logo">
-          <img src="../assets/images/logo.png" alt="Logo">
-          <h2>Informed</h2>
+            <img src="../assets/images/logo.png" alt="Logo">
+            <h2>Informed</h2>
         </a>
         <!-- Navbar -->
         <nav>
-          <ul class="nav-links">
-            <li class="dropdown">
-              <a href="./unitys.html">Unidades</a>
-              <ul class="dropdown-menu">
-                <li><a href="https://esa.ipb.pt/" target="_blank">Agrária</a></li>
-                <li><a href="https://www.ese.ipb.pt/" target="_blank">Educação</a></li>
-                <li><a href="https://estig.ipb.pt/" target="_blank">Tecnologia e Gestão</a></li>
-                <li><a href="https://esact.ipb.pt/" target="_blank">Comunicação e Administração</a></li>
-                <li><a href="https://essa.ipb.pt/" target="_blank">Saúde</a></li>
-              </ul>
-            </li>
-            <li><a href="./services.html">Serviços</a></li>
-            <li><a href="./health_wellness.html">Saúde e Bem-estar</a></li>
-          </ul>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="./unitys.html">Unidades</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://esa.ipb.pt/" target="_blank">Agrária</a></li>
+                        <li><a href="https://www.ese.ipb.pt/" target="_blank">Educação</a></li>
+                        <li><a href="https://estig.ipb.pt/" target="_blank">Tecnologia e Gestão</a></li>
+                        <li><a href="https://esact.ipb.pt/" target="_blank">Comunicação e Administração</a></li>
+                        <li><a href="https://essa.ipb.pt/" target="_blank">Saúde</a></li>
+                    </ul>
+                </li>
+                <li><a href="./services.html">Serviços</a></li>
+                <li><a href="./health_wellness.html">Saúde e Bem-estar</a></li>
+            </ul>
         </nav>
         <!-- Theme -->
         <div class="theme-toggle">
-          <div class="toggle-switch" id="theme-switch">
-            <i class="fa-regular fa-moon"></i>
-            <i class="fa-regular fa-sun"></i>
-            <div class="toggle-circle"></div>
-          </div>
+            <div class="toggle-switch" id="theme-switch">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+                <div class="toggle-circle"></div>
+            </div>
         </div>
         <!-- Account -->
         <a href="./account.html" class="account-link">
-          <button class="account">
-            <i class="fa fa-regular fa-user"></i>
-            Área do Utente
-          </button>
+            <button class="account">
+                <i class="fa fa-regular fa-user"></i>
+                Área do Utente
+            </button>
         </a>
-      </header>
+    </header>
 
     <!-- Navegacao Lateral -->
     <aside>
+        <!-- Upper -->
         <div class="overview">
             <h2>Visão Geral</h2>
             <a href="./consult.html" class="item">
@@ -80,13 +81,14 @@
                 <p>Especialidades</p>
             </a>
         </div>
+        <!-- Bottom -->
         <div class="geral">
             <h2>Geral</h2>
             <a href="" class="item">
                 <i class="icon fa-regular fa-message"></i>
                 <p>Mensagens</p>
             </a>
-            <a href="" class="item">
+            <a href="./contact.html" class="item">
                 <i class="icon fa-solid fa-phone"></i>
                 <p>Contactos</p>
             </a>
@@ -105,7 +107,7 @@
         <!-- Nome -->
         <div class="form">
             <div class="name">
-                <h3>Nome Completo</h3>
+                <h3>Nome Completo *</h3>
                 <div class="division">
                     <div class="field">
                         <p>Primeiro Nome</p>
@@ -119,27 +121,35 @@
             </div>
         </div>
 
+        <div class="line"></div>
+
         <!-- Email -->
         <div class="form">
             <div class="name">
-                <h3>Email</h3>
+                <h3>Email *</h3>
                 <h4>Utilizaremos este email para enviar notificações.</h4>
                 <input type="email" id="email" placeholder="a0000@alunos.ipb.pt" required>
             </div>
         </div>
 
+        <div class="line"></div>
+
         <!-- Phone -->
         <div class="form">
             <div class="name">
-                <h3>Telefone</h3>
-                <input type="tel" id="phone" placeholder="+351 910 000 000" required>
+                <h3>Número de Telemóvel *</h3>
+                <h4>O número de telefone será usado para notificações urgentes ou chamadas diretas em caso de necessidade.</h4>
+                <input type="number" id="phone" placeholder="+351 910 222 333" required>
             </div>
         </div>
+
+        <div class="line"></div>
 
         <!-- Doctor -->
         <div class="form">
             <div class="name">
-                <h3>Médico</h3>
+                <h3>Médico *</h3>
+                <h4>Indique o nome do seu médico de referência para que possamos manter uma comunicação eficiente com ele, caso necessário.</h4>
                 <select id="doctor" required>
                     <option value="">Selecione</option>
                     <option value="Dr. João Silva">Dr. João Silva</option>
@@ -148,10 +158,13 @@
             </div>
         </div>
 
+        <div class="line"></div>
+
         <!-- Blood Type -->
         <div class="form">
             <div class="name">
-                <h3>Tipo Sanguíneo</h3>
+                <h3>Tipo Sanguíneo *</h3>
+                <h4>Conhecer o seu grupo sanguíneo ajuda-nos a agir rapidamente em situações de emergência.</h4>
                 <select id="bloodType" required>
                     <option value="">Selecione</option>
                     <option value="A+">A+</option>
@@ -166,29 +179,76 @@
             </div>
         </div>
 
+        <div class="line"></div>
+
         <!-- Allergies -->
         <div class="form">
             <div class="name">
-                <h3>Alergias</h3>
-                <label><input type="checkbox" name="allergies" value="Nenhuma"> Nenhuma</label>
-                <label><input type="checkbox" name="allergies" value="Pólen"> Pólen</label>
-                <label><input type="checkbox" name="allergies" value="Amendoim"> Amendoim</label>
+                <h3>Alergias *</h3>
+                <h4>Informe-nos sobre qualquer alergia a medicamentos, alimentos ou substâncias, para que possamos prevenir eventuais reações adversas nos seus tratamentos.</h4>
+                <div class="columns">
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Penicilina"> Penicilina</label>
+                        <label><input type="checkbox" name="allergies" value="Ibuprofeno"> Ibuprofeno</label>
+                        <label><input type="checkbox" name="allergies" value="Aspirina"> Aspirina</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Amendoins"> Amendoins</label>
+                        <label><input type="checkbox" name="allergies" value="Marisco"> Marisco</label>
+                        <label><input type="checkbox" name="allergies" value="Lactose / Glúten"> Lactose / Glúten</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Pólen"> Pólen</label>
+                        <label><input type="checkbox" name="allergies" value="Ácaros"> Ácaros</label>
+                        <label><input type="checkbox" name="allergies" value="Pêlo de Animais"> Pêlo de Animais</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Pólen"> Latex</label>
+                        <label><input type="checkbox" name="allergies" value="Ácaros"> Fragrâncias</label>
+                        <label><input type="checkbox" name="allergies" value="Pêlo de Animais"> Nenhuma</label>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="line"></div>
 
         <!-- Chronic Diseases -->
         <div class="form">
             <div class="name">
-                <h3>Doenças Crónicas</h3>
-                <label><input type="checkbox" name="diseases" value="Nenhuma"> Nenhuma</label>
-                <label><input type="checkbox" name="diseases" value="Diabetes"> Diabetes</label>
-                <label><input type="checkbox" name="diseases" value="Hipertensão"> Hipertensão</label>
+                <h3>Doenças Crónicas *</h3>
+                <h4>Informe-nos sobre doenças crónicas como diabetes, hipertensão, ou outras condições que necessitem de acompanhamento contínuo.</h4>
+                <div class="columns">
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Penicilina"> Diabetes</label>
+                        <label><input type="checkbox" name="allergies" value="Ibuprofeno"> Hipertensão</label>
+                        <label><input type="checkbox" name="allergies" value="Aspirina"> Asma</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Amendoins"> Doença Cardíaca</label>
+                        <label><input type="checkbox" name="allergies" value="Marisco"> Doença Pulmonar</label>
+                        <label><input type="checkbox" name="allergies" value="Lactose / Glúten"> Colesterol Alto</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Pólen"> Problemas de Visão</label>
+                        <label><input type="checkbox" name="allergies" value="Ácaros"> Problemas de Audição</label>
+                        <label><input type="checkbox" name="allergies" value="Pêlo de Animais"> Problemas Digestivos</label>
+                    </div>
+                    <div class="column">
+                        <label><input type="checkbox" name="allergies" value="Pólen"> Doença Mental</label>
+                        <label><input type="checkbox" name="allergies" value="Ácaros"> Enxaquecas</label>
+                        <label><input type="checkbox" name="allergies" value="Pêlo de Animais"> Nenhuma</label>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Save Button -->
-        <div class="form">
-            <button id="saveButton" onclick="saveData()">Salvar Alterações</button>
+        <div class="save-preferences">
+            <div class="left-content">
+                <p>* Campo obrigatorio</p>
+            </div>
+            <button class="btn-form" onclick="saveData()">Guardar Alterações</button>
         </div>
     </main>
 
@@ -234,23 +294,8 @@
         </div>
     </footer>
 
-    <script>
-        function saveData() {
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const doctor = document.getElementById('doctor').value;
-            const bloodType = document.getElementById('bloodType').value;
-
-            if (!firstName || !lastName || !email || !phone || !doctor || !bloodType) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-
-            alert('Alterações salvas com sucesso!');
-        }
-    </script>
+    <script src="../assets/js/account.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 
 </html>
