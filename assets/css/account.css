@@ -196,6 +196,7 @@ input[type="checkbox"] {
     border: 1px solid var(--color-border-line);
     box-sizing: border-box;
     top: 0;
+    cursor: pointer;
 }
 
 input[type="checkbox"]:checked {
