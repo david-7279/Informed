@@ -89,7 +89,7 @@ main{
 
 .hero .appointment {
     padding: 15px 80px;
-    background: var(--color-background-secondary);
+    background: var(--color-background);
     color: var(--color-text-black);
     box-shadow: var(--box-shadow);
     border-color: var(--color-primary);
