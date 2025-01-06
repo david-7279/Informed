@@ -322,7 +322,7 @@ button.confirm-button, button.cancel-button {
 }
 
 button.cancel-button {
-    background-color: var(--color-white);  /* Fundo branco para o botão de cancelar */
+    background-color: var(--color-background);  /* Fundo branco para o botão de cancelar */
     color: var(--color-primary);  /* Texto roxo */
     margin-right: 4%;
 }
@@ -334,7 +334,7 @@ button.cancel-button:hover {
 }
 
 button.confirm-button {
-    color: var(--color-black); /* Texto branco */
+    color: var(--color-text); /* Texto branco */
     margin-left: 4%;
 }
 

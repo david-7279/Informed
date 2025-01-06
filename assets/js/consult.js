@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   consultasContainer.innerHTML = '';  // Limpa o container antes de adicionar as novas consultas
   
   if (consultas.length === 0) {
-    consultasContainer.innerHTML = '<p>Nenhuma consulta marcada.</p>';
+    consultasContainer.innerHTML = '<p class="consulta-marcada">Nenhuma consulta marcada.</p>';
   }
 
   consultas.forEach(consulta => {

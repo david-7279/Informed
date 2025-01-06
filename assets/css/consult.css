@@ -212,3 +212,9 @@ main{
     margin-right: 20px;
     box-shadow: var(--box-shadow-hover);
 }
+
+.consulta-marcada { 
+background-color: var(--color-background);
+box-shadow: none;
+
+}
