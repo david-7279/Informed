@@ -8,6 +8,7 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="../assets/css/consult_appointment.css">
   <link rel="stylesheet" href="../assets/css/navbar_footer.css">
   <title>Marcação de Consulta | Informed</title>
@@ -95,87 +96,81 @@
     </div>
   </aside>
 
-  <h1>Marcar uma consulta</h1>
-  <sup>
-    <h4>Agende a sua consulta de forma rápida e eficiente</h4>
-  </sup>
-  <main>
-    <section class="form" id="consultaForm">
-      <div class="form-container">
-        <form>
-          <div class="form-group">
-            <label for="tipoConsulta">Tipo de Consulta</label>
-            <h5>Escolha o tipo de consulta que deseja agendar</h5>
-            <select id="tipoConsulta" required>
-              <option value="">Selecione...</option>
-              <option value="Marcação">Marcação</option>
-              <option value="Exame">Exame</option>
-            </select>
+    <h1>Marcar uma consulta</h1>
+    <sup>
+      <h4 id="subtituloConsulta"> Agende a sua consulta de forma rápida e eficiente</h4>
+    </sup>
+    <main>
+      <section class="form" id="consultaForm">
+        <div class="form-container">
+          <form>
+            <div class="form-group">
+              <label for="tipoConsulta">Tipo de Consulta</label>
+              <h5>Escolha o tipo de consulta que deseja agendar</h5>
+              <select id="tipoConsulta" required>
+                <option value="">Selecione...</option>
+                <option value="ConsultaGeral">Consulta Geral</option>
+                <option value="ConsultaEspecializada">Consulta Especializada</option>
+                <option value="Exame">Exame</option>
+              </select> 
+              <div class="line"></div>
+            </div>
+          
+          
+
+            <div class="form-group">
+              <label for="especialidade">Especialidade Médica</label>
+              <h5>Escolha a sua especialidade medica</h5>
+              <select id="especialidade" required>
+                <option value="">Selecione...</option>
+              </select>
+              <div class="line"></div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="medico">Escolha o Médico</label>
+              <h5>Indique o nome do seu médico de referência.</h5>
+              <select id="medico" required>
+                <option value="">Selecione...</option>
+              </select>
+              <div class="line"></div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="unidade">Unidade Universitária</label>
+              <h5>Escolha a sua unidade universitária.</h5>
+              <select id="unidade" required>
+                <option value="">Selecione...</option>
+                <option value="Clínica A">ESTIG</option>
+                <option value="Clínica B">Agrária</option>
+                <option value="Clínica C">Educação </option>
+                <option value="Clínica D">Saúde</option>
+              </select>
+              <div class="line"></div>
+
+            </div>
+
+              <label for="dataHora">Data e Hora da Consulta</label>
+              <h5>Escolha a data e hora da sua consulta.</h5>
+            <input type="datetime-local" id="dataHora" name="dataHora" readonly>
             <div class="line"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="especialidade">Especialidade Médica</label>
-            <h5>Escolha a sua especialidade medica</h5>
-            <select id="especialidade" required>
-              <option value="">Selecione...</option>
-              <option value="Cirurgia">Cirurgia</option>
-              <option value="Radioterapia">Radioterapia</option>
-              <option value="Cardiologia">Cardiologia</option>
-              <option value="Neurologia">Neurologia</option>
-              <option value="Dermatologia">Dermatologia</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="medico">Escolha o Médico</label>
-            <h5>Indique o nome do seu médico de referência.</h5>
-            <select id="medico" required>
-              <option value="">Selecione...</option>
-              <option value="Dr Carlos">Dr. Carlos Silva</option>
-              <option value="Dra Maria">Dra. Maria Souza</option>
-              <option value="Dr João">Dr. João Oliveira</option>
-              <option value="Dra Ana">Dra. Ana Costa</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="unidade">Unidade Universitária</label>
-            <h5>Escolha a sua unidade universitária.</h5>
-            <select id="unidade" required>
-              <option value="">Selecione...</option>
-              <option value="Clínica A">Clínica A</option>
-              <option value="Clínica B">Clínica B</option>
-              <option value="Clínica C">Clínica C</option>
-            </select>
-            <div class="line"></div>
-
-          </div>
-
-          <div class="form-group">
-            <label for="dataHora">Data e Hora da Consulta</label>
-            <h5>Escolha a data e o horário que melhor se adequa.</h5>
-            <input type="datetime-local" id="dataHora" required>
-          </div>
-          <div class="line"></div>
-
-          <div class="form-group">
-            <label for="motivo">Motivo da Consulta</label>
-            <h5>Descreva brevemente o motivo da consulta.</h5>
-            <textarea id="motivo" rows="4" required></textarea>
-          </div>
-
-          <button class="confirm" type="submit">Confirmar Agendamento</button>
-        </form>
-      </div>
-    </section>
 
 
-    <section class="summary" id="summaryContainer" style="display: none;">
+            <div class="form-group">
+              <label for="motivo">Motivo da Consulta</label>
+              <h5>Descreva brevemente o motivo da consulta.</h5>
+              <textarea id="motivo" rows="4" required></textarea>
+            </div>
+
+            <button class="confirm" type="submit">Confirmar Agendamento</button>
+          </form>
+        </div>
+      </section>
+
+
+    <section class="summary" id="summaryContainer"style="display: none;">
       <div class="summary-container">
         <h2>Resumo da Consulta</h2>
 
@@ -260,6 +255,8 @@
           </div>
         </div>
 
+
+
         <div class="btn">
           <button class="cancel-button" id="cancelButton">Cancelar</button>
           <button class="confirm-button" id="confirmButton">Confirmar</button>
@@ -269,9 +266,11 @@
 
     <div class="final-message" id="finalMessage" style="display: none;">
       <h2 id="statusMessage"></h2>
-      <button onclick="window.location.href='consult.html'" class="return-button">Voltar à Página Principal</button>
+      <button onclick="window.location.href='./consult.html'" class="return-button">Voltar à Página Principal</button>
     </div>
-    </section>
+  </section>
+
+
   </main>
 
   <!-- Footer -->
@@ -319,6 +318,8 @@
 
   <script src="../assets/js/consult_appointment.js"></script>
   <script src="../assets/js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </body>
 
 </html>

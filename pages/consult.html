@@ -1,151 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Consultas | Informed</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+    <title>Consultas | Informed</title>
   <link rel="stylesheet" href="../assets/css/navbar_footer.css">
   <link rel="stylesheet" href="../assets/css/consult.css">
 </head>
 
+
+
+
 <body>
-  <!-- Navegacao Superior -->
-  <header>
-    <!-- Logo -->
-    <a href="./home.html" class="logo">
-      <img src="../assets/images/logo.png" alt="Logo">
-      <h2>Informed</h2>
+<!-- Navegacao Superior -->
+<header>
+  <!-- Logo -->
+  <a href="./home.html" class="logo">
+    <img src="../assets/images/logo.png" alt="Logo">
+    <h2>Informed</h2>
+  </a>
+  <!-- Navbar -->
+  <nav>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="./unitys.html">Unidades</a>
+        <ul class="dropdown-menu">
+          <li><a href="https://esa.ipb.pt/" target="_blank">Agrária</a></li>
+          <li><a href="https://www.ese.ipb.pt/" target="_blank">Educação</a></li>
+          <li><a href="https://estig.ipb.pt/" target="_blank">Tecnologia e Gestão</a></li>
+          <li><a href="https://esact.ipb.pt/" target="_blank">Comunicação e Administração</a></li>
+          <li><a href="https://essa.ipb.pt/" target="_blank">Saúde</a></li>
+        </ul>
+      </li>
+      <li><a href="./services.html">Serviços</a></li>
+      <li><a href="./health_wellness.html">Saúde e Bem-estar</a></li>
+    </ul>
+  </nav>
+  <!-- Theme -->
+  <div class="theme-toggle">
+    <div class="toggle-switch" id="theme-switch">
+      <i class="fa-regular fa-moon"></i>
+      <i class="fa-regular fa-sun"></i>
+      <div class="toggle-circle"></div>
+    </div>
+  </div>
+  <!-- Account -->
+  <a href="./account.html" class="account-link">
+    <button class="account">
+      <i class="fa fa-regular fa-user"></i>
+      Área do Utente
+    </button>
+  </a>
+</header>
+
+<!-- Navegacao Lateral -->
+<aside>
+  <!-- Upper -->
+  <div class="overview">
+    <h2>Visão Geral</h2>
+    <a href="./consult.html" class="item">
+      <i class="icon fa-solid fa-clipboard-list"></i>
+      <p>Consultas</p>
     </a>
-    <!-- Navbar -->
-    <nav>
-      <ul class="nav-links">
-        <li class="dropdown">
-          <a href="./unitys.html">Unidades</a>
-          <ul class="dropdown-menu">
-            <li><a href="https://esa.ipb.pt/" target="_blank">Agrária</a></li>
-            <li><a href="https://www.ese.ipb.pt/" target="_blank">Educação</a></li>
-            <li><a href="https://estig.ipb.pt/" target="_blank">Tecnologia e Gestão</a></li>
-            <li><a href="https://esact.ipb.pt/" target="_blank">Comunicação e Administração</a></li>
-            <li><a href="https://essa.ipb.pt/" target="_blank">Saúde</a></li>
-          </ul>
-        </li>
-        <li><a href="./services.html">Serviços</a></li>
-        <li><a href="./health_wellness.html">Saúde e Bem-estar</a></li>
-      </ul>
-    </nav>
-    <!-- Theme -->
-    <div class="theme-toggle">
-      <div class="toggle-switch" id="theme-switch">
-        <i class="fa-regular fa-moon"></i>
-        <i class="fa-regular fa-sun"></i>
-        <div class="toggle-circle"></div>
-      </div>
-    </div>
-    <!-- Account -->
-    <a href="./account.html" class="account-link">
-      <button class="account">
-        <i class="fa fa-regular fa-user"></i>
-        Área do Utente
-      </button>
+    <a href="" class="item">
+      <i class="icon fa-solid fa-phone"></i>
+      <p>Teleconsulta</p>
     </a>
-  </header>
+    <a href="" class="item">
+      <i class="icon fa-solid fa-syringe"></i>
+      <p>Vacinação</p>
+    </a>
+    <a href="" class="item">
+      <i class="icon fa-solid fa-heart-pulse"></i>
+      <p>Doar Sangue</p>
+    </a>
+    <a href="./especialidade.html" class="item">
+      <i class="icon fa-solid fa-stethoscope"></i>
+      <p>Especialidades</p>
+    </a>
+  </div>
+  <!-- Bottom -->
+  <div class="geral">
+    <h2>Geral</h2>
+    <a href="" class="item">
+      <i class="icon fa-regular fa-message"></i>
+      <p>Mensagens</p>
+    </a>
+    <a href="./contact.html" class="item">
+      <i class="icon fa-solid fa-phone"></i>
+      <p>Contactos</p>
+    </a>
+  </div>
+</aside>
 
-  <!-- Navegacao Lateral -->
-  <aside>
-    <!-- Upper -->
-    <div class="overview">
-      <h2>Visão Geral</h2>
-      <a href="./consult.html" class="item">
-        <i class="icon fa-solid fa-clipboard-list"></i>
-        <p>Consultas</p>
-      </a>
-      <a href="" class="item">
-        <i class="icon fa-solid fa-phone"></i>
-        <p>Teleconsulta</p>
-      </a>
-      <a href="" class="item">
-        <i class="icon fa-solid fa-syringe"></i>
-        <p>Vacinação</p>
-      </a>
-      <a href="" class="item">
-        <i class="icon fa-solid fa-heart-pulse"></i>
-        <p>Doar Sangue</p>
-      </a>
-      <a href="./especialidade.html" class="item">
-        <i class="icon fa-solid fa-stethoscope"></i>
-        <p>Especialidades</p>
-      </a>
-    </div>
-    <!-- Bottom -->
-    <div class="geral">
-      <h2>Geral</h2>
-      <a href="" class="item">
-        <i class="icon fa-regular fa-message"></i>
-        <p>Mensagens</p>
-      </a>
-      <a href="./contact.html" class="item">
-        <i class="icon fa-solid fa-phone"></i>
-        <p>Contactos</p>
-      </a>
-    </div>
-  </aside>
 
-  <main>
-    <h1>Consultas do Usuário</h1>
-    <div id="consultasContainer">
-      <!-- Consultas marcadas serão exibidas aqui -->
-    </div>
-    <button id="novaConsultaButton">Marcar Nova Consulta</button>
-  </main>
 
-  <footer>
-    <div class="upper">
-      <div class="left">
-        <a href="./home.html" class="footer-logo">
-          <img src="../assets/images/logo.png" alt="Logo">
-          <h2>Informed</h2>
-        </a>
-
-        <div class="footer-contact">
-          <a href="mailto:webmaster@example.com" class="item">
-            <i class="icon fa-regular fa-envelope"></i>
-            informed@ipb.pt
-          </a>
-          <a href="tel:+351" class="item">
-            <i class="icon fa-solid fa-phone"></i>
-            +351 910 000 000
-          </a>
-        </div>
-      </div>
-
-      <div class="right">
-        <a href="./unitys.html" class="link">
-          Unidades
-        </a>
-        <a href="./services.html" class="link">
-          Serviços
-        </a>
-        <a href="./health_wellness.html" class="link">
-          Saúde e Bem-Estar
-        </a>
-        <a href="./contact.html" class="link">
-          Contactos
-        </a>
+<main>
+  <h1>Consultas do Usuário</h1>
+  <div id="consultasContainer">
+    <div class="consulta-item">
+      <p>Consulta do dia <strong>28/12/2024</strong> na hora <strong>15:40</strong></p>
+      <button class="detalhes-btn">Mais Detalhes</button>
+      <div class="consulta-detalhes" style="display: none;">
+        <h2>Detalhes da Consulta</h2>
+        <p><strong>Data:</strong> 28/12/2024</p>
+        <p><strong>Hora:</strong> 15:40</p>
+        <p><strong>Especialidade:</strong> Cardiologia</p>
+        <p><strong>Médico:</strong> Dra Maria</p>
+        <p><strong>Unidade:</strong> Clínica A</p>
+        <p><strong>Motivo:</strong> sadasdas</p>
+        <button class="voltar-btn">Voltar</button>
       </div>
     </div>
+  </div>
 
-    <hr>
-    <div class="lower">
-      <p>Todos os direitos reservados</p>
+  <!-- Botão para Confirmar Agendamento -->
+  <div class="btns">
+    <div class="confirmar-agendamento">
+      <a href="./consult_appointment.html">
+        <button class="confirmar-btn">Marcar Consulta</button>
+      </a>
     </div>
-  </footer>
+  
+    <!-- Botão para Resetar Consultas -->
+    <div class="reset-agendamento">
+      <button id="resetConsultasBtn" class="reset-btn">Resetar Consultas</button>
+    </div>
+  </div>
+  
 
-  <script src="../assets/js/consult.js"></script>
+  <div class="final-message" id="finalMessage" style="display: none;">
+    <h2 id="statusMessage"></h2>
+    <button onclick="window.location.href='./consult_appointment.html'" class="return-button">Voltar à Página Principal</button>
+  </div>
+
+
+</main>
+
+
+
+
   <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/consult.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="upper">
+    <div class="left">
+      <a href="./home.html" class="footer-logo">
+        <img src="../assets/images/logo.png" alt="Logo">
+        <h2>Informed</h2>
+      </a>
+
+      <div class="footer-contact">
+        <a href="mailto:webmaster@example.com" class="item">
+          <i class="icon fa-regular fa-envelope"></i>
+          informed@ipb.pt
+        </a>
+        <a href="tel:+351" class="item">
+          <i class="icon fa-solid fa-phone"></i>
+          +351 910 000 000
+        </a>
+      </div>
+    </div>
+
+    <div class="right">
+      <a href="./unitys.html" class="link">
+        Unidades
+      </a>
+      <a href="./services.html" class="link">
+        Serviços
+      </a>
+      <a href="./health_wellness.html" class="link">
+        Saúde e Bem-Estar
+      </a>
+      <a href="./contact.html" class="link">
+        Contactos
+      </a>
+    </div>
+  </div>
+
+  <hr>
+  <div class="lower">
+    <p>Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script src="../assets/js/consult_appointment.js"></script>
+<script src="../assets/js/theme.js"></script>
 </body>
 
 </html>

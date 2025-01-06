@@ -1,115 +1,154 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const consultaForm = document.getElementById('consultaForm');
+document.addEventListener('DOMContentLoaded', function () {
+  const tipoConsultaSelect = document.getElementById('tipoConsulta');
+  const especialidadeSelect = document.getElementById('especialidade');
+  const medicoSelect = document.getElementById('medico');
 
-  // Verifica se o formulário existe antes de adicionar o evento
-  if (consultaForm) {
-    consultaForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Evitar o comportamento padrão do formulário
+  // Especialidades por tipo de consulta
+  const especialidadesPorTipo = {
+    ConsultaGeral: ["Clínica Geral", "Check-up de rotina"],
+    ConsultaEspecializada: ["Cardiologia", "Neurologia", "Ginecologia"],
+    Exame: ["Radiografia", "Ultrassonografia", "Ressonância Magnética"]
+  };
 
-      // Obtendo os valores dos campos
-      const tipoConsulta = document.getElementById('tipoConsulta').value;
-      const especialidade = document.getElementById('especialidade').value;
-      const medico = document.getElementById('medico').value;
-      const unidade = document.getElementById('unidade').value;
-      const dataHora = document.getElementById('dataHora').value;
-      const motivo = document.getElementById('motivo').value;
-      const disponibilidadeMedicos = {
-        "Dr Carlos": {
-          "2024-12-13": ["14:00"], // Lista de horários ocupados
-        },
-        "Dra Maria": {
-          "2024-12-14": ["10:00", "11:00"],
-        },
-        "Dr João": {},
-        "Dra Ana": {},
-      };
+  // Médicos por tipo de especialidade
+  const medicosPorEspecialidade = {
+    "Clínica Geral": ["Dr. António Silva", "Dra. Ana Costa"],
+    "Check-up de rotina": ["Dr. António Silva", "Dra. Ana Costa"],
+    Cardiologia: ["Dr. Roberto Lima", "Dra. Luísa Andrade"],
+    Neurologia: ["Dra. Fernanda Martins", "Dr. Henrique Alves"],
+    Ginecologia: ["Dra. Sofia Almeida", "Dr. Miguel Carvalho"],
+    Radiografia: ["Dr. Filipe Costa", "Dra. Beatriz Moura"],
+    Ultrassonografia: ["Dr. Rafael Lopes", "Dra. Joana Azevedo"],
+    "Ressonância Magnética": ["Dra. Mariana Ribeiro", "Dr. Marcelo Pinto"]
+  };
 
-      // Validando se todos os campos foram preenchidos
-      if (!tipoConsulta || !especialidade || !medico || !unidade || !dataHora || !motivo) {
-        alert('Por favor, preencha todos os campos!');
-        return;
-      }
+  // Atualiza especialidades com base no tipo de consulta
+  tipoConsultaSelect.addEventListener('change', function () {
+    const tipoSelecionado = tipoConsultaSelect.value;
 
-      // Separando a data e hora
-      const [data, hora] = dataHora.split('T'); // Divide a string de dataHora em data e hora
+    // Limpa as opções de especialidade e médicos
+    especialidadeSelect.innerHTML = '<option value="">Selecione...</option>';
+    medicoSelect.innerHTML = '<option value="">Selecione...</option>';
 
-      // Formatando a data para o formato DD/MM/YYYY
-      const [ano, mes, dia] = data.split('-'); // Separa ano, mês e dia
-      const dataFormatada = `${dia}/${mes}/${ano}`; // Reorganiza para o formato DD/MM/YYYY
+    if (tipoSelecionado && especialidadesPorTipo[tipoSelecionado]) {
+      especialidadesPorTipo[tipoSelecionado].forEach(especialidade => {
+        const option = document.createElement('option');
+        option.value = especialidade;
+        option.textContent = especialidade;
+        especialidadeSelect.appendChild(option);
+      });
+    }
+  });
 
-  // Preenchendo o resumo com as informações
-  document.getElementById('summaryTipoConsulta').textContent = tipoConsulta;
-  document.getElementById('summaryEspecialidade').textContent = especialidade;
-  document.getElementById('summaryMedico').textContent = medico;
-  document.getElementById('summaryUnidade').textContent = unidade;
-  document.getElementById('summaryData').textContent = dataFormatada; // Exibe a data formatada
-  document.getElementById('summaryHora').textContent = hora; // Exibe a hora
-  document.getElementById('summaryMotivo').textContent = motivo;
+  // Atualiza médicos com base na especialidade selecionada
+  especialidadeSelect.addEventListener('change', function () {
+    const especialidadeSelecionada = especialidadeSelect.value;
 
-  // Exibindo o resumo e ocultando o formulário
-  document.getElementById('consultaForm').style.display = 'none';
-  document.getElementById('summaryContainer').style.display = 'block';
-});
+    // Limpa as opções de médicos
+    medicoSelect.innerHTML = '<option value="">Selecione...</option>';
 
-document.getElementById('cancelButton').addEventListener('click', function () {
-  mostrarMensagemFinal('Consulta cancelada');
-});
+    if (especialidadeSelecionada && medicosPorEspecialidade[especialidadeSelecionada]) {
+      medicosPorEspecialidade[especialidadeSelecionada].forEach(medico => {
+        const option = document.createElement('option');
+        option.value = medico;
+        option.textContent = medico;
+        medicoSelect.appendChild(option);
+      });
+    }
+  });
 
-document.getElementById('confirmButton').addEventListener('click', function () {
-  mostrarMensagemFinal('Consulta marcada');
-});
+  // Configuração do Flatpickr
+  flatpickr("#dataHora", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    time_24hr: true,
+    minDate: "today",
+    minuteIncrement: 5,
+    theme: "material_blue"
+  });
 
-function mostrarMensagemFinal(mensagem) {
-  // Ocultar o resumo
-  document.getElementById('summaryContainer').style.display = 'none';
+  // Validação e submissão do formulário
+  document.getElementById('consultaForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Impede o envio do formulário
 
-  // Mostrar a mensagem final
-  const finalMessage = document.getElementById('finalMessage');
-  finalMessage.style.display = 'block';
-  document.getElementById('statusMessage').textContent = mensagem;
-}
+    // Obtendo os valores dos campos
+    const tipoConsulta = tipoConsultaSelect.value;
+    const especialidade = especialidadeSelect.value;
+    const medico = medicoSelect.value;
+    const unidade = document.getElementById('unidade').value;
+    const dataHora = document.getElementById('dataHora').value;
+    const motivo = document.getElementById('motivo').value;
 
-document.getElementById('consultaForm').addEventListener('submit', function (event) {
-  event.preventDefault();
+    // Validação dos campos
+    if (!tipoConsulta || !especialidade || !medico || !unidade || !dataHora || !motivo) {
+      alert('Por favor, preencha todos os campos!');
+      return;
+    }
 
-  // Obtendo os valores dos campos do formulário
-  const medico = document.getElementById('medico').value;
-  const dataHora = document.getElementById('dataHora').value;
+    // Separando data e hora
+    const [dataCompleta, horaCompleta] = dataHora.split(' ');
 
-  // Verificar se os campos obrigatórios estão preenchidos
-  if (!medico || !dataHora) {
-    alert('Por favor, selecione o médico e a data/hora!');
-    return;
+    // Verificar se já existe consulta marcada
+    const consultasSalvas = JSON.parse(localStorage.getItem('consultas')) || [];
+    const consultaExistente = consultasSalvas.find(consulta =>
+      consulta.medico === medico &&
+      consulta.data === dataCompleta.split('-').reverse().join('/') &&
+      consulta.hora === horaCompleta
+    );
+
+    if (consultaExistente) {
+      alert('Este médico já tem uma consulta marcada para o horário selecionado. Por favor, escolha outro horário.');
+      return;
+    }
+
+    // Criar objeto de consulta
+    const consulta = {
+      tipoConsulta,
+      especialidade,
+      medico,
+      unidade,
+      data: dataCompleta.split('-').reverse().join('/'), // Formato DD/MM/YYYY
+      hora: horaCompleta,
+      motivo
+    };
+
+    // Exibe o resumo da consulta
+    exibirResumoConsulta(consulta);
+
+    // Ocultar o formulário e mostrar o resumo
+    document.getElementById('consultaForm').style.display = 'none';
+    document.getElementById('summaryContainer').style.display = 'block';
+
+    // Adicionar eventos aos botões Confirmar e Cancelar
+    document.getElementById('confirmButton').addEventListener('click', function () {
+      consultasSalvas.push(consulta);
+      localStorage.setItem('consultas', JSON.stringify(consultasSalvas));
+      mostrarMensagemFinal('Consulta marcada');
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function () {
+      mostrarMensagemFinal('Consulta cancelada');
+    });
+  });
+
+  // Função para exibir o resumo da consulta
+  function exibirResumoConsulta(consulta) {
+    document.getElementById('summaryData').textContent = consulta.data; // Exibe a data
+    document.getElementById('summaryHora').textContent = consulta.hora; // Exibe a hora
+    document.getElementById('summaryTipoConsulta').textContent = consulta.tipoConsulta; // Exibe o tipo de consulta
+    document.getElementById('summaryEspecialidade').textContent = consulta.especialidade; // Exibe a especialidade
+    document.getElementById('summaryMedico').textContent = consulta.medico; // Exibe o médico
+    document.getElementById('summaryUnidade').textContent = consulta.unidade; // Exibe a unidade
+    document.getElementById('summaryMotivo').textContent = consulta.motivo; // Exibe o motivo
   }
 
-  // Separar a data e a hora
-  const [data, hora] = dataHora.split('T');
-
-  // Verificar disponibilidade
-  if (disponibilidadeMedicos[medico] && disponibilidadeMedicos[medico][data]?.includes(hora)) {
-    alert('Este horário já está ocupado para o médico selecionado. Escolha outro horário ou médico.');
-    return;
+  // Função para mostrar a mensagem final
+  function mostrarMensagemFinal(mensagem) {
+    document.getElementById('summaryContainer').style.display = 'none';
+    const finalMessage = document.getElementById('finalMessage');
+    finalMessage.style.display = 'block';
+    document.getElementById('statusMessage').innerHTML = mensagem === 'Consulta cancelada'
+      ? `<h2>${mensagem}</h2><p>A sua consulta foi cancelada com sucesso. Clique no botão abaixo para marcar uma nova consulta.</p>`
+      : `<h2>${mensagem}</h2><p>A sua consulta foi marcada com sucesso. Obrigado por utilizar nosso sistema!</p>`;
   }
-
-  // Registrar o horário como ocupado
-  if (!disponibilidadeMedicos[medico][data]) {
-    disponibilidadeMedicos[medico][data] = [];
-  }
-  disponibilidadeMedicos[medico][data].push(hora);
-
-  // Mostrar mensagem de sucesso
-  mostrarMensagemFinal('Consulta marcada');
 });
-
-// Função para exibir a mensagem final
-function mostrarMensagemFinal(mensagem) {
-  // Ocultar o formulário
-  document.getElementById('consultaForm').style.display = 'none';
-
-  // Mostrar a mensagem final
-  const finalMessage = document.getElementById('finalMessage');
-  finalMessage.style.display = 'block';
-  document.getElementById('statusMessage').textContent = mensagem;
-
-  console.log(disponibilidadeMedicos); // Para debug, exibe a base de dados atualizada
-}}});
